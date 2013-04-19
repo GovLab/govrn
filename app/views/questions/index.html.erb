@@ -5,10 +5,14 @@
 <% @questions.each do |question| %>
   <tr>
     <td><%= question.prompt %></td>
-    <% if question.average >= 0.5 %>
-      <td class="yes"><%= (question.average*100).to_i %>% yes</td>
-    <% else %>
-      <td class="no"><%= ((1 - question.average)*100).to_i %>% no</td>
+    <% unless question.average < 0 %>
+      <% if question.average >= 0.5 %>
+        <td class="yes"><%= (question.average*100).to_i %>% yes</td>
+      <% else %>
+        <td class="no"><%= ((1 - question.average)*100).to_i %>% no</td>
+      <% end %>
+     <% else %>
+      <td></td>
     <% end %>
   </tr>
 <% end %>
