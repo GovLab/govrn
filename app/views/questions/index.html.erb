@@ -13,6 +13,7 @@
         <td class="no"><%= ((1 - question.average)*100).to_i %>% no</td>
       <% end %>
      <% else %>
+      <td><%= button_to "x", question, :method => :delete, :class => "smallDelete" %></td>
       <td></td>
     <% end %>
   </tr>
@@ -20,4 +21,4 @@
 
 </table>
 
-<a href=""><div id="add_new">Add New</div></a>
+<a href="/questions/new"><div id="add_new">Add New</div></a>
