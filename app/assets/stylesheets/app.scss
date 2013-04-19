@@ -44,6 +44,10 @@ $maybeColor: #ffc700;
 			border-top: 1px solid #eeeeee;
 		}
 
+		tr:last-of-type > td {
+			border-bottom: 1px solid #eeeeee;
+		}
+
 		td.yes {
 			color: $yesColor;
 		}
