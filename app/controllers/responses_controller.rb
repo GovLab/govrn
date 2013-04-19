@@ -1,4 +1,6 @@
 class ResponsesController < ApplicationController
+  protect_from_forgery except: [:create, :update]
+
   # GET /responses
   # GET /responses.json
   def index
