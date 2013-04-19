@@ -49,6 +49,12 @@ $maybeColor: #ffc700;
 			padding: 20px 5px;
 			font-size:20px;
 			border-top: 1px solid #eeeeee;
+			font-family:"Gill Sans" ; 
+			font-weight:lighter; 
+			font-size:20px; 
+			padding-bottom:30px;
+			padding-top:20px; 
+			display:block; max-width:350px;
 		}
 
 		tr:last-of-type > td {
@@ -75,7 +81,7 @@ $maybeColor: #ffc700;
 .body{font-family:"Helvetica Neue"; font-weight:lighter; font-size:15px;}
 
 #logo {display:block;position:fixed; top:3px; left:0px; 
-background-image: image-url('logo3.png'); background-repeat:no-repeat; background-size:70px 22px; z-index:100; width:300px; height:60px; margin-left:10px; margin-top:10px;}
+background-image: image-url('logo3.png'); background-repeat:no-repeat; background-size:80px 25px; z-index:100; width:300px; height:60px; margin-left:10px; margin-top:10px;}
 
 /*#logo {display:block;position:fixed; top:3px; left:0px; 
 background-image: image-url('logo.png'); background-repeat:no-repeat; background-size:300px 60px; z-index:100; width:300px; height:60px;}*/
@@ -83,3 +89,20 @@ background-image: image-url('logo.png'); background-repeat:no-repeat; background
 #header {display:block; position:fixed; top:0px; width:100%;background:rgba(0,0,0,.9); height:50px; left:0px;}
 
 
+#new_question .field label{width:350px;font-family:"Gill Sans" ; font-weight:lighter; font-size:20px;  }
+#question_prompt {width:350px; height:25px; margin-bottom:20px; }
+#question_abstract {width:350px; height:25px; margin-bottom:20px;}
+#question_description {width:350px; height:125px; }
+.actions input {width:100px; height:50px; }
+#container form.new_question .actions input {width:100px; height:50px; }
+
+input[type=submit]{height: 50px;
+			min-width: 150px;
+			border: 0px;
+			color: white;
+			font-size: 15px;
+			font-family:"Helvetica Neue"; font-weight:lighter;
+			cursor:pointer;
+			background: rgba(0,0,0,.9);
+			margin-top:20px;
+}
