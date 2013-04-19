@@ -54,7 +54,8 @@ $maybeColor: #ffc700;
 			font-size:18px; 
 			padding-bottom:30px;
 			padding-top:20px; 
-			/*display:block;*/ max-width:350px;
+			max-width:350px;
+			background-image: image-url('votes.png');
 		}
 
 		tr:last-of-type > td {
