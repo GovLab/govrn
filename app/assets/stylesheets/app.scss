@@ -45,16 +45,16 @@ $maybeColor: #ffc700;
 	table.questions {
 
 		td {
-			height: 20px;
+			height: 60px;
 			padding: 20px 5px;
 			font-size:20px;
 			border-top: 1px solid #eeeeee;
 			font-family:"Gill Sans" ; 
 			font-weight:lighter; 
-			font-size:20px; 
+			font-size:18px; 
 			padding-bottom:30px;
 			padding-top:20px; 
-			display:block; max-width:350px;
+			/*display:block;*/ max-width:350px;
 		}
 
 		tr:last-of-type > td {
