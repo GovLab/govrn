@@ -4,7 +4,7 @@
 <table class="questions">
 <% @questions.each do |question| %>
   <tr>
-    <td><%= question.prompt %></td>
+    <td class="graph"><%= question.prompt %></td>
     <% unless question.average < 0 %>
       <% if question.average >= 0.5 %>
         <td class="yes"><%= (question.average*100).to_i %>% yes</td>

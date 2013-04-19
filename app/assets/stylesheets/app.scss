@@ -55,7 +55,10 @@ $maybeColor: #ffc700;
 			padding-bottom:30px;
 			padding-top:20px; 
 			max-width:350px;
-			background-image: image-url('votes.png');
+
+			&.graph {
+				background-image: image-url('votes.png');
+			}
 		}
 
 		tr:last-of-type > td {
