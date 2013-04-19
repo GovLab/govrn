@@ -1,5 +1,7 @@
 Govrn::Application.routes.draw do
 
+  resources :responses
+
   resources :questions do
     resources :responses
   end
