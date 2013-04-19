@@ -1,8 +1,8 @@
 Govrn::Application.routes.draw do
-  resources :responses
 
-
-  resources :questions
+  resources :questions do
+    resources :responses
+  end
 
 
   # The priority is based upon order of creation:

@@ -24,7 +24,7 @@ class ResponsesController < ApplicationController
   # GET /responses/new
   # GET /responses/new.json
   def new
-    @response = Response.new
+    @response = Response.new()
 
     respond_to do |format|
       format.html # new.html.erb
@@ -41,6 +41,7 @@ class ResponsesController < ApplicationController
   # POST /responses.json
   def create
     @response = Response.new(params[:response])
+    @response.question_id = params[:question_id]
 
     respond_to do |format|
       if @response.save
