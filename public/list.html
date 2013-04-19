@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Ruby on Rails: Welcome aboard</title>
+    <link rel="stylesheet" href="/assets/application.css"></link>
+    <script type="text/javascript">
+      function about() {
+        info = document.getElementById('about-content');
+        if (window.XMLHttpRequest)
+          { xhr = new XMLHttpRequest(); }
+        else
+          { xhr = new ActiveXObject("Microsoft.XMLHTTP"); }
+        xhr.open("GET","rails/info/properties",false);
+        xhr.send("");
+        info.innerHTML = xhr.responseText;
+        info.style.display = 'block'
+      }
+    </script>
+  </head>
+  <body>
+    <div id="container">
+      <table class="questions">
+        <tr>
+          <td>Should we increase the number of H1-B visas we allot each year?</td>
+          <td class="yes">62% yes</td>
+        </tr>
+        <tr>
+          <td>Should we increase the number of H1-B visas we allot each year?</td>
+          <td class="no">55% no</td>
+        </tr>
+        <tr>
+          <td>Should we increase the number of H1-B visas we allot each year?</td>
+          <td class="no">57% no</td>
+        </tr>
+        <tr>
+          <td>Should we make some magic?</td>
+          <td class="no">59% no</td>
+        </tr>
+        <tr>
+          <td>Should we make some magic?</td>
+          <td class="yes">74% yes</td>
+        </tr>
+      </table>
+    </div>
+  </body>
+</html>
