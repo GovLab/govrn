@@ -6,18 +6,18 @@
 <% @questions.each do |question| %>
   <tr>
     <td class="graph"><%= question.prompt %></td>
-    <% unless question.average < 0 %>
-      <% if question.average >= 0.5 %>
-        <td class="yes"><%= (question.average*100).to_i %>% yes</td>
+    <td>
+      <% if question.responses.length > 0 %>
+        <% if question.positive %>
+          <div class="number yes"><%= (question.yes_fraction * 100).to_i %>% <span>yes</span></div>
+        <% else %>
+          <div class="number no"><%= (question.no_fraction * 100).to_i %>% <span>no</span></div>
+        <% end %>
+        <div class="desc">out of <%= question.responses.length %></div>        
       <% else %>
-        <td class="no"><%= ((1 - question.average)*100).to_i %>% no</td>
+        <div class="desc">No responses yet!</div>
       <% end %>
-     <% else %>
-      <td>
-        <div class="number">68% <span>yes</span></div>
-        <div class="desc">out of 323 responses</div>
-      </td>
-    <% end %>
+    </td>
   </tr>
 <% end %>
 </table>

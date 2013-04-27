@@ -63,25 +63,20 @@ $maybeColor: #ffc700;
 			border-bottom: 1px solid #eeeeee;
 		}
 
-		td.yes {
-			color: $yesColor;
-		}
-
-		td.no {
-			color: $noColor;
-		}
-
 		td:last-child {
 			padding-left:50px;
 		}
 
 		td .number {
 			font-size: 40px;
-			color: #ed002f;
 
 			span {
 				font-size: 30px;
 			}
+
+			&.yes {color: $yesColor;}
+
+			&.no {color: $noColor;}
 		}
 
 		td .desc {
