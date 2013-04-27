@@ -1,7 +1,7 @@
 <div id="logo"></div>
-    <div id="header"></div>
+<div id="header"></div>
 
-<h1>Recent Questions from Your Policy Makers</h1>
+<h1>Recent Questions</h1>
 <table class="questions">
 <% @questions.each do |question| %>
   <tr>
@@ -13,12 +13,12 @@
         <td class="no"><%= ((1 - question.average)*100).to_i %>% no</td>
       <% end %>
      <% else %>
-      <td><%= button_to "x", question, :method => :delete, :class => "smallDelete" %></td>
-      <td></td>
+      <td>
+        <div class="number">68% <span>yes</span></div>
+        <div class="desc">out of 323 responses</div>
+      </td>
     <% end %>
   </tr>
 <% end %>
-
 </table>
 
-<a href="/questions/new"><div id="add_new">Add New</div></a>

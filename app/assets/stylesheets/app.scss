@@ -5,9 +5,10 @@ $maybeColor: #ffc700;
 
 
 #container {
-	margin-left: 25%;
-	margin-right: 25%;
+	margin-left: auto;
+	margin-right: auto;
 	margin-top: 100px;
+	width: 750px;
 
 	.options {
 
@@ -44,21 +45,18 @@ $maybeColor: #ffc700;
 
 	table.questions {
 
+		width: 100%;
+
 		td {
 			height: 60px;
 			background-color: rgba(255,255,255,1);
-			padding: 20px 5px 0px 20px;
+			padding: 15px 0px;
 			font-size:20px;
 			border-top: 1px solid #eeeeee;
-			font-family:"Gill Sans" ; 
+			font-family:"Helvetica Neue" ; 
 			font-weight:lighter; 
 			font-size:18px; 
-			padding-bottom:30px;
-			padding-top:20px; 
-			max-width:350px;
-
-			&.graph {
-				background-image: image-url('votes.png') ; background-repeat:no-repeat; background-size:450px 100px; background-position: bottom;			}
+			max-width:400px;
 		}
 
 		tr:last-of-type > td {
@@ -76,8 +74,23 @@ $maybeColor: #ffc700;
 		td:last-child {
 			padding-left:50px;
 		}
+
+		td .number {
+			font-size: 40px;
+			color: #ed002f;
+
+			span {
+				font-size: 30px;
+			}
+		}
+
+		td .desc {
+			font-size:12px;
+			color:#777;
+			margin-top:2px;
+		}
 	}
-	h1{text-align: center; font-family:"Gill Sans" ; font-weight:lighter; font-size:20px; padding-bottom:30px;padding-top:20px; display:block; max-width:360px;}
+	h1 {font-family:"Helvetica Neue"; font-weight:lighter; font-size:20px;}
 	
 }
 
@@ -93,7 +106,7 @@ background-image: image-url('logo.png'); background-repeat:no-repeat; background
 #header {display:block; position:fixed; top:0px; width:100%;background:rgba(0,0,0,.9); height:50px; left:0px;}
 
 
-#new_question .field label{width:350px;font-family:"Gill Sans" ; font-weight:lighter; font-size:20px;  }
+#new_question .field label{width:350px;font-family:"Helvetica Neue" ; font-weight:lighter; font-size:20px;  }
 #question_prompt {width:350px; height:25px; margin-bottom:20px; }
 #question_abstract {width:350px; height:25px; margin-bottom:20px;}
 #question_description {width:350px; height:125px; }
