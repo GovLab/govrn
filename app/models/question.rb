@@ -1,5 +1,7 @@
 class Question < ActiveRecord::Base
   attr_accessible :abstract, :description, :prompt
+
+  belongs_to :user
   has_many :responses
 
   def yes_votes
