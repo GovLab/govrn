@@ -1,21 +1,18 @@
 <div id="logo"></div>
-    <div id="header"></div>
+<div id="header"></div>
 
 <h1>Recent Questions from Your Policy Makers</h1>
 <table class="questions">
 <% @questions.each do |question| %>
   <tr>
     <td class="graph"><%= question.prompt %></td>
-    <% unless question.average < 0 %>
-      <% if question.average >= 0.5 %>
-        <td class="yes"><%= (question.average*100).to_i %>% yes</td>
+      <% if question.positive %>
+        <td class="yes"><%= (question.yes_fraction * 100).to_i %>% yes</td>
       <% else %>
-        <td class="no"><%= ((1 - question.average)*100).to_i %>% no</td>
+        <td class="no"><%= (question.no_fraction * 100).to_i %>% no</td>
       <% end %>
-     <% else %>
       <td><%= button_to "x", question, :method => :delete, :class => "smallDelete" %></td>
       <td></td>
-    <% end %>
   </tr>
 <% end %>
 
