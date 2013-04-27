@@ -1,5 +1,8 @@
 Govrn::Application.routes.draw do
 
+  resources :users
+
+
   resources :responses
 
   resources :questions do
