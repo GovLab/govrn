@@ -6,14 +6,14 @@
 <% @questions.each do |question| %>
   <tr>
     <td class="graph"><%= question.prompt %></td>
-    <td>
+    <td style="color:<%= question_color(question).css_rgb %>">
       <% if question.responses.length > 0 %>
         <% if question.positive %>
           <div class="number yes"><%= (question.yes_fraction * 100).to_i %>% <span>yes</span></div>
         <% else %>
           <div class="number no"><%= (question.no_fraction * 100).to_i %>% <span>no</span></div>
         <% end %>
-        <div class="desc">out of <%= question.responses.length %></div>        
+        <div class="desc">out of <%= question.responses.length %></div>
       <% else %>
         <div class="desc">No responses yet!</div>
       <% end %>
