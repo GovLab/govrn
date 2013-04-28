@@ -33,7 +33,15 @@ class Question < ActiveRecord::Base
   end
 
   def positive
-    self.yes_votes.size >= self.no_votes.size
+    self.majority_response_type == self.RESPONSE_OPTIONS[0]
+  end
+
+  def negative
+    self.majority_response_type == self.RESPONSE_OPTIONS[1]
+  end
+
+  def undecided
+    self.majority_response_type == self.RESPONSE_OPTIONS[2]
   end
 
   def votes_by_type

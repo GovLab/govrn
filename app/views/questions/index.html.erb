@@ -9,28 +9,28 @@
     <td style="color:<%= question_color(question).css_rgb %>" class="stats">
       <% if question.responses.length > 0 %>
         
-        <% if question.majority_response_type == question.RESPONSE_OPTIONS[0] %>
-          <div class="number yes">
+        <% if question.positive %>
+          <div class="number">
             <%= (question.yes_fraction * 100).to_i %>% <span>yes</span></div>
           <div class="desc">
-            <span><%= question.no_votes.length %>% no</span>
-            <span><%= question.undecided_votes.length %>% undecided</span>
+            <span><%= (question.no_fraction * 100).to_i %>% no</span>
+            <span><%= (question.undecided_fraction  * 100).to_i %>% undecided</span>
           </div>
 
-        <% elsif question.majority_response_type == question.RESPONSE_OPTIONS[1] %>
-          <div class="number no"><%= (question.no_fraction * 100).to_i %>% <span>no</span></div>
+        <% elsif question.negative %>
+          <div class="number"><%= (question.no_fraction * 100).to_i %>% <span>no</span></div>
           <div class="desc">
-            <span><%= question.yes_votes.length %>% yes</span>
-            <span><%= question.undecided_votes.length %>% undecided</span>
+            <span><%= (question.yes_fraction * 100).to_i %>% yes</span>
+            <span><%= (question.undecided_fraction  * 100).to_i %>% undecided</span>
           </div>
 
-        <% else question.majority_response_type == question.RESPONSE_OPTIONS[2] %>
-          <div class="number no"><%= (question.undecided_fraction * 100).to_i %>% 
+        <% else question.undecided %>
+          <div class="number"><%= (question.undecided_fraction * 100).to_i %>% 
             <span>undecided</span>
           </div>
           <div class="desc">
-            <span><%= question.yes_votes.length %>% yes</span>
-            <span><%= question.no_votes.length %>% no</span>
+            <span><%= (question.yes_fraction  * 100).to_i%>% yes</span>
+            <span><%= (question.no_fraction * 100).to_i %>% no</span>
           </div>
         <% end %>
       <% end %>
