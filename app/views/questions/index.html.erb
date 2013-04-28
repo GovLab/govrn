@@ -5,19 +5,38 @@
 <table class="questions">
 <% @questions.each do |question| %>
   <tr>
-    <td class="graph"><%= question.prompt %></td>
-    <td style="color:<%= question_color(question).css_rgb %>">
+    <td><%= question.prompt %></td>
+    <td style="color:<%= question_color(question).css_rgb %>" class="stats">
       <% if question.responses.length > 0 %>
-        <% if question.positive %>
-          <div class="number yes"><%= (question.yes_fraction * 100).to_i %>% <span>yes</span></div>
-        <% else %>
+        
+        <% if question.majority_response_type == question.RESPONSE_OPTIONS[0] %>
+          <div class="number yes">
+            <%= (question.yes_fraction * 100).to_i %>% <span>yes</span></div>
+          <div class="desc">
+            <span><%= question.no_votes.length %>% no</span>
+            <span><%= question.undecided_votes.length %>% undecided</span>
+          </div>
+
+        <% elsif question.majority_response_type == question.RESPONSE_OPTIONS[1] %>
           <div class="number no"><%= (question.no_fraction * 100).to_i %>% <span>no</span></div>
+          <div class="desc">
+            <span><%= question.yes_votes.length %>% yes</span>
+            <span><%= question.undecided_votes.length %>% undecided</span>
+          </div>
+
+        <% else question.majority_response_type == question.RESPONSE_OPTIONS[2] %>
+          <div class="number no"><%= (question.undecided_fraction * 100).to_i %>% 
+            <span>undecided</span>
+          </div>
+          <div class="desc">
+            <span><%= question.yes_votes.length %>% yes</span>
+            <span><%= question.no_votes.length %>% no</span>
+          </div>
         <% end %>
-        <div class="desc">out of <%= question.responses.length %></div>
-      <% else %>
-        <div class="desc">No responses yet!</div>
       <% end %>
+      <div class="desc"><%= question.responses.length %> responses</div>
     </td>
+    
   </tr>
 <% end %>
 </table>

@@ -8,7 +8,7 @@ $maybeColor: #ffc700;
 	margin-left: auto;
 	margin-right: auto;
 	margin-top: 100px;
-	width: 750px;
+	width: 950px;
 
 	.options {
 
@@ -52,10 +52,13 @@ $maybeColor: #ffc700;
 			padding: 15px 0px;
 			font-size:20px;
 			border-top: 1px solid #eeeeee;
-			font-family:"Helvetica Neue" ; 
-			font-weight:lighter; 
-			font-size:18px; 
-			max-width:400px;
+			font-family:"Helvetica Neue" ;
+			font-size:18px;
+		}
+
+		td.stats {
+			min-width: 250px;
+			font-weight: lighter;
 		}
 
 		tr:last-of-type > td {
@@ -76,9 +79,13 @@ $maybeColor: #ffc700;
 		}
 
 		td .desc {
-			font-size:12px;
-			color:#777;
-			margin-top:2px;
+			color:#bbb;
+			font-size: 15px;
+			margin-top:3px;
+
+			> span:first-of-type {
+				margin-right: 20px;
+			}
 		}
 	}
 	h1 {font-family:"Helvetica Neue"; font-weight:lighter; font-size:20px;}
