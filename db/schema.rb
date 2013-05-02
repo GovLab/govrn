@@ -11,7 +11,13 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130419074124) do
+ActiveRecord::Schema.define(:version => 20130502034528) do
+
+  create_table "beta_signups", :force => true do |t|
+    t.text     "email"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "questions", :force => true do |t|
     t.string   "prompt"

@@ -2,6 +2,7 @@ Govrn::Application.routes.draw do
 
   root to: 'home#index'
 
+  resources :beta_signups, only: :create
   resources :responses
 
   resources :questions do

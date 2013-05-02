@@ -1,0 +1,14 @@
+@import "app.scss";
+
+.flash-msg {
+  padding: 0.5em 1em;
+  text-align: center;
+
+  &.notice {
+    background-color: #12E012;
+  }
+
+  &.error {
+    background-color: $noColor;
+  }
+}
