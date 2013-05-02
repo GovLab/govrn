@@ -1,3 +1,29 @@
 // Place all the styles related to the Home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.signup {
+  // mask the screen
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(10%, 10%, 10%, 0.5);
+
+  form {
+    // attempt to center it
+    position: absolute;
+    $width: 400px;
+    $height: 300px;
+    top: 50%;
+    left: 50%;
+    width: $width;
+    margin-top: -1 * $height / 2;
+    margin-left: -1 * $width / 2;
+
+    text-align: center;
+    padding: 3em;
+    background-color: #fff;
+  }
+}

@@ -8,7 +8,7 @@ class BetaSignupsController < ApplicationController
       if @beta_signup.save
         flash[:notice] = "Signed up!  You'll hear from us soon."
 
-        format.html { redirect_to root_path, notice: 'Beta signup was successfully created.' }
+        format.html
         format.json { render json: @beta_signup, status: :created, location: @beta_signup }
       else
         flash[:error] = @beta_signup.errors.full_messages.to_sentence
