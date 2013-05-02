@@ -1,5 +1,7 @@
 Govrn::Application.routes.draw do
 
+  root to: 'home#index'
+
   resources :responses
 
   resources :questions do
