@@ -11,7 +11,9 @@ class BetaSignupsController < ApplicationController
         format.html { redirect_to root_path, notice: 'Beta signup was successfully created.' }
         format.json { render json: @beta_signup, status: :created, location: @beta_signup }
       else
-        format.html { render controller: 'home', action: 'index' }
+        flash[:error] = @beta_signup.errors.full_messages.to_sentence
+
+        format.html { redirect_to root_path }
         format.json { render json: @beta_signup.errors, status: :unprocessable_entity }
       end
     end
